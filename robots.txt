@@ -1,0 +1,12 @@
+# Sailor Nails Spa · robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /sql/
+Disallow: /api/
+Disallow: /instalar.php
+
+# Al publicar, reemplaza el dominio y descomenta esta línea:
+# Sitemap: https://tudominio.com/sitemap.php
