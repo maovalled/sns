@@ -57,3 +57,26 @@ Se crearon los flujos de Integracion y Despliegue:
 Se incorporaron utilidades para mitigar el riesgo operativo en los pases a produccion:
 - `scripts/backup.sh`: Automatiza el volcado preventivo de la base de datos y de la configuracion antes de desplegar.
 
+
+## 7. Gestion de Cambios
+Se establecio una plantilla de integracion (`.github/PULL_REQUEST_TEMPLATE.md`) que exige detallar el impacto de la actualizacion (modulos afectados), la evaluacion de riesgos (seguridad y operatividad) y el plan de mitigacion correspondiente antes de autorizar cualquier cambio a produccion.
+
+
+**Ejemplo en texto de un Pull Request Correcto:**
+- **Titulo del PR:** `feat(inventario): agregar alerta de stock critico`
+- **Descripcion:** Se implemento una advertencia visual de color rojo cuando un producto alcanza el stock minimo configurado, facilitando el reabastecimiento.
+- **Analisis de Impacto:** 
+  - Modulos afectados: `admin/inventario.php`, `includes/funciones.php`
+  - Tablas modificadas: Ninguna (la columna `stock_minimo` ya existia).
+- **Evaluacion de Riesgos:** 
+  - Riesgo Operativo: Bajo. Solo afecta la visualizacion del panel administrativo.
+  - Riesgo de Seguridad: Bajo. No expone nuevos endpoints.
+- **Plan de Reversion:** Ejecutar `scripts/rollback.sh` para volver al commit anterior en caso de falla grafica.
+
+
+**Ejemplo PR:**
+
+<br>
+<img src="./img/pr.png" alt="PR" width="600" style="border:1px solid #ccc; display:block;" />
+<br>
+
