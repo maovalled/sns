@@ -53,6 +53,13 @@ Se crearon los flujos de Integracion y Despliegue:
 - **Integracion Continua (`.github/workflows/ci.yml`)**: Se encarga de construir la aplicacion, descargar dependencias e iterar las pruebas. Se activa en las aperturas de Pull Requests.
 - **Despliegue Continuo (`.github/workflows/cd.yml`)**: Realiza el paso a produccion en Hostinger. Solo se dispara cuando los cambios son integrados definitivamente en la rama de produccion (`main`).
 
+**Evidencia build:**
+
+<br>
+<img src="./img/ci-cd.png" alt="PR" width="600" style="border:1px solid #ccc; display:block;" />
+<br>
+
+
 ## 6. Automatizacion de Respaldo
 Se incorporaron utilidades para mitigar el riesgo operativo en los pases a produccion:
 - `scripts/backup.sh`: Automatiza el volcado preventivo de la base de datos y de la configuracion antes de desplegar.
@@ -74,7 +81,7 @@ Se establecio una plantilla de integracion (`.github/PULL_REQUEST_TEMPLATE.md`) 
 - **Plan de Reversion:** Ejecutar `scripts/rollback.sh` para volver al commit anterior en caso de falla grafica.
 
 
-**Ejemplo PR:**
+**Evidencia PR:**
 
 <br>
 <img src="./img/pr.png" alt="PR" width="600" style="border:1px solid #ccc; display:block;" />
