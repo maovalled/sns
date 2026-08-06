@@ -1,0 +1,31 @@
+# Dependencias
+vendor/
+node_modules/
+
+# Archivos de entorno y credenciales
+.env
+.env.production
+.env.test
+
+# Archivos de la IDE
+.vscode/
+.idea/
+
+# Carpetas de datos y subidas de usuarios
+uploads/
+
+# Archivos temporales y logs
+*.log
+logs/
+tmp/
+temp/
+
+# Backups y volcados de bases de datos locales
+*.sql
+!sql/sns_instalacion_completa.sql
+!sql/actualizacion_*.sql
+backups/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
