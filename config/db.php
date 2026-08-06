@@ -14,8 +14,8 @@ date_default_timezone_set('America/Bogota');
 const DB_LOCAL = [
     'host' => 'localhost',
     'port' => '3306',
-    'name' => 'sns_principal',
-    'user' => 'root',
+    'name' => 'ba',
+    'user' => 'usr',
     'pass' => '',
 ];
 
@@ -27,9 +27,9 @@ const DB_LOCAL = [
 const DB_PRODUCCION = [
     'host' => 'localhost',              // en Hostinger casi siempre es localhost
     'port' => '3306',
-    'name' => 'u387214240_sns_principal',    // ej: u123456789_sns
-    'user' => 'u387214240_root',        // ej: u123456789_admin
-    'pass' => '4L3j0.885!',
+    'name' => 'nm',    // ej: u123456789_sns
+    'user' => 'usr',        // ej: u123456789_admin
+    'pass' => 'pass',
 ];
 
 // ═══════════════════════════════════════════════════════════════════════
