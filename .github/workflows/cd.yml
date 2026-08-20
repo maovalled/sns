@@ -22,11 +22,18 @@ jobs:
           chmod +x scripts/backup.sh
           ./scripts/backup.sh
 
-      - name: Deploy to Hostinger (Simulated via FTP/SSH)
-        run: |
-          echo "Conectando a Hostinger..."
-          echo "Subiendo archivos..."
-          echo "Despliegue simulado exitoso."
+      - name: Deploy to Hosting
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/tests/**
+            **/sql/**
+            README.md
 
       - name: Verify Health
         run: echo "Verificando estado de la aplicacion en produccion... OK"
