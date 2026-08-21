@@ -49,14 +49,21 @@ Como la cadena de texto iniciaba con "Ajuste" y no con un formato semantico vali
 - **Ambientes**: El sistema maneja el mismo codigo base para los entornos de Desarrollo, Pruebas y Produccion, aislando unicamente las credenciales mediante el archivo `.env`.
 
 ## 5. Pipeline CI/CD (GitHub Actions)
-Se crearon los flujos de Integracion y Despliegue:
-- **Integracion Continua (`.github/workflows/ci.yml`)**: Se encarga de construir la aplicacion, descargar dependencias e iterar las pruebas. Se activa en las aperturas de Pull Requests.
-- **Despliegue Continuo (`.github/workflows/cd.yml`)**: Realiza el paso a produccion en Hostinger. Solo se dispara cuando los cambios son integrados definitivamente en la rama de produccion (`main`).
+Como buena practica, se separaron los flujos de Integracion y Despliegue:
+- **Integracion Continua (CI):** El archivo `.github/workflows/ci.yml` se activa automaticamente cuando se abren Pull Requests dirigidos hacia las ramas `main` y `develop`. Este flujo valida la calidad del codigo, descarga las dependencias y ejecuta pruebas.
+- **Despliegue Continuo (CD):** El archivo `.github/workflows/cd.yml` ejecuta el paso a produccion en este caso en un entorno de demostracion alojado en **Freehostia**. Solo se dispara cuando los cambios han sido aprobados e integrados en la rama `main`.
 
-**Evidencia build:**
+**Evidencia CI/CD y despliegue exitoso en Freehostia:**
+
+<img src="./img/ci-cd.png" alt="cd" width="600" style="border:1px solid #ccc; display:block;" />
+<img src="./img/ci-cd1.png" alt="cd1" width="600" style="border:1px solid #ccc; display:block;" />
 
 <br>
-<img src="./img/ci-cd.png" alt="PR" width="600" style="border:1px solid #ccc; display:block;" />
+
+**Freehostia:**
+
+<br>
+<img src="./img/deploy_freehostia.png" alt="Freehostia" width="600" style="border:1px solid #ccc; display:block;" />
 <br>
 
 
